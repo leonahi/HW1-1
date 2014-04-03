@@ -1,0 +1,4 @@
+set term png
+set output "mpi.png"
+plot "hw1.txt" every ::20::23 using 1:2 with lines title '100', "hw1.txt" every ::24::27 using 1:2 with lines title '500',"hw1.txt" every ::28::31 using 1:2 with lines title '1000',"hw1.txt" every ::32::35 using 1:2 with lines title '2000'
+

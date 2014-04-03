@@ -1,0 +1,33 @@
+Serial:
+
+The code uses the basic method for computing matrix products.
+
+Memory are initialised using double pointers and random float values assigned to them.
+Double pointers allows  to access elements using the standard X[i][j] notation.
+
+Code here
+
+
+
+OpenMP:
+
+Code to compute product is same as for serial with the exception of having 
+to use a #pragma. The pragma allows us to initialize multiple threads for use on
+a multi-core machine. 
+
+pragma code
+
+MPI:
+
+Based on the idea of master and slave(nodes) each having a unique id.
+The master initializes the respective matrices and then based on stripsize respective parts of A are sent to each node
+ while entire B matrices are sent to all nodes. Repective memory locations sent using MPI_Send.  Multiplication routines as per serial. 
+The completed products are then reassembled in the Master node to get the complete product using MPI_Recv.
+
+
+Bash Scirpt:
+The bash script 
+1. Gathers system information
+2. Automates passing of arguement's ie matrix size and threads. 
+3. Output's are registered into a file and the plots are done using gnuplot.
+
